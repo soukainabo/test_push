@@ -17,7 +17,7 @@ then
     if [[ $NEW_TAG =~ $rx ]]
     then
         # Get git last tag
-        LAST_TAG=$(git tag | tail -1 | tr -d v)
+        LAST_TAG=$(git tag --sort=v:refname | tail -1 | tr -d v)
 
         # Compare new and last tags
         if [[ $NEW_TAG == $LAST_TAG ]]
